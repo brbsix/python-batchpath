@@ -44,31 +44,3 @@ License
 Copyright (c) 2015 Six (brbsix@gmail.com).
 
 Licensed under the GPLv2 license.
-
-
-.. |travis| image:: https://travis-ci.org/magmax/python-readchar.png
-  :target: `Travis`_
-  :alt: Travis results
-
-.. |coveralls| image:: https://coveralls.io/repos/magmax/python-readchar/badge.png
-  :target: `Coveralls`_
-  :alt: Coveralls results_
-
-.. |pip version| image:: https://pypip.in/v/readchar/badge.png
-    :target: https://pypi.python.org/pypi/readchar
-    :alt: Latest PyPI version
-
-.. |pip downloads| image:: https://pypip.in/d/readchar/badge.png
-    :target: https://pypi.python.org/pypi/readchar
-    :alt: Number of PyPI downloads
-
-.. _pypi: https://pypi.python.org/pypi/readchar
-.. _GitHub: https://github.com/magmax/python-readchar
-.. _python-inquirer: https://github.com/magmax/python-inquirer
-.. _Travis: https://travis-ci.org/magmax/python-readchar
-.. _Coveralls: https://coveralls.io/r/magmax/python-readchar
-.. _@magmax9: https://twitter.com/magmax9
-
-.. _the MIT license: http://opensource.org/licenses/MIT
-.. _getch()-like unbuffered character reading from stdin on both Windows and Unix (Python recipe): http://code.activestate.com/recipes/134892/
-.. _Danny Yoo: http://code.activestate.com/recipes/users/98032/
