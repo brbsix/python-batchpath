@@ -38,7 +38,8 @@ Usage
 
   vp = VerifyPaths()
   paths = ['/path/to/file', '/path/to/dir', '/path/to/other']
-  verified = vp.any(paths, access=os.R_OK)
+  verification_status = vp.any(paths, access=os.R_OK)
+  invalid_paths = vp.failures
 
 License
 =======
