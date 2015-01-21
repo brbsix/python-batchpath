@@ -109,14 +109,14 @@ class VerifyPaths:
 
     def dirs(self, paths, access=None):
         """Verify list of directories"""
-        self.failures = [path for path in paths if not isvalid(path, access)]
+        self.failures = [path for path in paths if not isvalid(path, access, filetype='dir')]
 
         return not self.failures
 
     def files(self, paths, access=None, extensions=None, minsize=None):
         """Verify list of files"""
         self.failures = [path for path in paths if not
-                         isvalid(path, access, extensions, minsize=minsize)]
+                         isvalid(path, access, extensions, 'file', minsize)]
 
         return not self.failures
 
