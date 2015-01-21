@@ -3,7 +3,7 @@ Python module to generate and verify pathnames meeting specified criteria.
 About
 ===================
 
-This module is sort of like os.walk on steroids. It was created to ease the use of command-line path arguments in your Python scripts. For instance, say the user passes in several files and directories as arguments and you want to return a sorted list of files within said directories meeting specific access, extension, and/or size criteria. Or perhaps the user passes in a list of files and you want to verify all of the files meet the necessary criteria before using them.
+This module is sort of like os.walk on steroids. It was created to ease the safe use of command-line path arguments in your Python scripts. For instance, say the user passes in several files and directories as arguments and you want to return a sorted list of files within said directories meeting specific access, extension, and/or size criteria. Or perhaps the user passes in a list of files and you want to verify all of the files meet the necessary criteria before using them.
 
 
 Documentation
@@ -28,7 +28,8 @@ Usage
   from batchpath import GeneratePaths()
 
   gp = GeneratePaths()
-  files = gp.files(['/path/to/directory'], access=os.R_OK, extensions=['conf','txt'], minsize=0, recursion=True)
+  paths = ['/path/to/directory']
+  files = gp.files(paths, access=os.R_OK, extensions=['conf','txt'], minsize=0, recursion=True)
 
 
 .. code:: python
@@ -36,7 +37,8 @@ Usage
   from batchpath import VerifyPaths()
 
   vp = VerifyPaths()
-  verified = vp.any(access=os.R_OK)
+  paths = ['/path/to/file', '/path/to/dir', '/path/to/other']
+  verified = vp.any(paths, access=os.R_OK)
 
 License
 =======
