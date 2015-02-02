@@ -30,7 +30,7 @@ class GeneratePaths:
             if os.path.isfile(path):
                 if isvalid(path, self.access, self.extensions,
                            minsize=self.minsize):
-                    yield path
+                    yield os.path.abspath(path)
             elif os.path.isdir(path):
                 # pylint: disable=W0612
                 for root, dnames, fnames in self._walker(path):
