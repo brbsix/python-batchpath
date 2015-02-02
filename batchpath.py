@@ -1,12 +1,17 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 """Takes a list of paths (files and/or directories) and returns a generator or
 list consisting of paths meeting specified criteria"""
 
+__module__ = 'batchpath'
+__version__ = '0.1-dev'
+
+
+#/--- BEGIN CODE ---/#
 
 import os
 from functools import partial
-
-__version__ = '0.1-dev'
 
 
 class GeneratePaths:
@@ -57,7 +62,7 @@ class GeneratePaths:
         """
         self.__init__()
         self.access = access
-        self.filetype = 'any'
+        self.filetype = 'all'
         self.paths = paths
         self.recursion = recursion
 
@@ -100,10 +105,10 @@ class VerifyPaths:
     def __init__(self):
         self.failures = []
 
-    def any(self, paths, access=None):
+    def all(self, paths, access=None):
         """Verify list of paths"""
         self.failures = [path for path in paths if not
-                         isvalid(path, access, filetype='any')]
+                         isvalid(path, access, filetype='all')]
 
         return not self.failures
 
@@ -163,7 +168,7 @@ def isvalid(path, access=None, extensions=None, filetype=None, minsize=None):
     """Check whether file meets access, extension, size, and type criteria."""
     return ((access is None or os.access(path, access)) and
             (extensions is None or checkext(path, extensions)) and
-            (((filetype == 'any' and os.path.exists(path)) or
+            (((filetype == 'all' and os.path.exists(path)) or
               (filetype == 'dir' and os.path.isdir(path)) or
               (filetype == 'file' and os.path.isfile(path))) or filetype is None)
             and (minsize is None or (not os.path.isfile(path) or

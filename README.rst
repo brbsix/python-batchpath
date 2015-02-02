@@ -38,7 +38,7 @@ Usage
 
   vp = VerifyPaths()
   paths = ['/path/to/file', '/path/to/dir', '/path/to/other']
-  verification_status = vp.any(paths, access=os.R_OK)
+  verification_status = vp.all(paths, access=os.R_OK)
   invalid_paths = vp.failures
 
 License
@@ -46,4 +46,4 @@ License
 
 Copyright (c) 2015 Six (brbsix@gmail.com).
 
-Licensed under the GPLv2 license.
+Licensed under the GPLv3 license.
