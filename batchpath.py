@@ -12,7 +12,7 @@ whether the paths meet the specified criteria.
 """
 
 __module__ = 'batchpath'
-__version__ = '0.1'
+__version__ = '0.2'
 
 
 # --- BEGIN CODE --- #
