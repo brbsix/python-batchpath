@@ -15,7 +15,7 @@ setup(
     version=__version__,
     author='Brian Beffa',
     author_email='brbsix@gmail.com',
-    description="Utilities to generate and verify pathnames",
+    description="Developer utility to generate and verify pathnames",
     long_description=read('README.rst'),
     url='https://github.com/brbsix/python-batchpath',
     license='GPLv3',
@@ -37,5 +37,6 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
         'Topic :: Software Development',
         'Topic :: System :: Filesystems',
+        'Topic :: Utilities',
     ],
 )
