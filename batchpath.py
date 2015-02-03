@@ -1,14 +1,21 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""Takes a list of paths (files and/or directories) and returns a generator or
-list consisting of paths meeting specified criteria"""
+"""
+Developer utility to generate and verify pathnames
+
+GeneratePaths() takes a list of paths and returns a list of paths meeting
+specified criteria (including access, filename extension, minimum size).
+
+VerifyPaths() takes a list of paths and returns a boolean according to
+whether the paths meet the specified criteria.
+"""
 
 __module__ = 'batchpath'
-__version__ = '0.1-dev'
+__version__ = '0.1'
 
 
-#/--- BEGIN CODE ---/#
+# --- BEGIN CODE --- #
 
 import os
 from functools import partial
@@ -114,7 +121,8 @@ class VerifyPaths:
 
     def dirs(self, paths, access=None):
         """Verify list of directories"""
-        self.failures = [path for path in paths if not isvalid(path, access, filetype='dir')]
+        self.failures = [path for path in paths if not
+                         isvalid(path, access, filetype='dir')]
 
         return not self.failures
 
