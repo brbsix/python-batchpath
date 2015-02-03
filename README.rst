@@ -1,5 +1,3 @@
-Python module to generate and verify pathnames meeting specified criteria.
-
 About
 ===================
 
