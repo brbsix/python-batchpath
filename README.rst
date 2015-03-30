@@ -9,7 +9,7 @@ Installation
 
 ::
 
-   pip3 install batchpath
+   pip3 install --user batchpath
 
 The :code:`batchpath` module is known to be compatible with Python 3.
 
