@@ -11,18 +11,17 @@ VerifyPaths() takes a list of paths and returns a boolean according to
 whether the paths meet the specified criteria.
 """
 
+import os
+from functools import partial
+
 __module__ = 'batchpath'
 __version__ = '0.2'
 
 
-# --- BEGIN CODE --- #
-
-import os
-from functools import partial
-
-
 class GeneratePaths:
+
     """Process list of paths and return an iterable of verified paths."""
+
     def __init__(self):
         self.access = None
         self.extensions = None
@@ -108,7 +107,9 @@ class GeneratePaths:
 
 
 class VerifyPaths:
+
     """Verify list of paths"""
+
     def __init__(self):
         self.failures = []
 
@@ -159,7 +160,7 @@ def _walk(recursion):
     if recursion:
         walk = partial(walk_function)
     else:
-        def walk(path):     # pylint: disable=C0111
+        def walk(path):  # pylint: disable=C0111
             try:
                 yield next(walk_function(path))
             except NameError:
@@ -178,6 +179,7 @@ def isvalid(path, access=None, extensions=None, filetype=None, minsize=None):
             (extensions is None or checkext(path, extensions)) and
             (((filetype == 'all' and os.path.exists(path)) or
               (filetype == 'dir' and os.path.isdir(path)) or
-              (filetype == 'file' and os.path.isfile(path))) or filetype is None)
-            and (minsize is None or (not os.path.isfile(path) or
-                                     os.path.getsize(path) > minsize)))
+              (filetype == 'file' and os.path.isfile(path))) or
+             filetype is None) and
+            (minsize is None or (not os.path.isfile(path) or
+                                 os.path.getsize(path) > minsize)))
