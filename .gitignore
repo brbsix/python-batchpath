@@ -1,5 +1,6 @@
+*.py[co]
+
 __pycache__/
+batchpath.egg-info/
 build/
 dist/
-*.egg-info/
-*.pyc
