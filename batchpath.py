@@ -38,8 +38,7 @@ class GeneratePaths:
                            minsize=self.minsize):
                     yield os.path.abspath(path)
             elif os.path.isdir(path):
-                # pylint: disable=W0612
-                for root, dnames, fnames in self._walker(path):
+                for root, _, fnames in self._walker(path):
                     yield from self._generator_rebase(fnames, root)
 
     def _generator_other(self):
